@@ -2,21 +2,22 @@ import React from "react";
 
 class NewTodo extends React.Component {
   state = {
-    todo: null
+    items: null,
+    key: null
   };
 
   handleChange = event => {
-    //event.preventDefault();
-    console.log(this.state.todo);
+    //console.log(this.state.items);
+    const itemDate = Date.now();
     const { value } = event.target;
-    this.setState({ todo: value });
+    this.setState({ items: value, key: itemDate });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("current state: " + this.state.todo);
+    console.log("current state: " + this.state.items);
     //const { value } = event.target;
-    //this.setState({ todo: value });
+    //this.setState({ items: value });
   };
 
   render() {
@@ -25,15 +26,13 @@ class NewTodo extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            value={this.state.todo}
+            value={this.state.items}
             onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />
         </form>
 
-        <ul>
-          <li>{this.state.todo}</li>
-        </ul>
+        <ul>{this.state.items != null && <li>{this.state.items}</li>}</ul>
       </div>
     );
   }
