@@ -7,6 +7,16 @@ class NewTodo extends React.Component {
     items: []
   };
 
+  removeItem = index => {
+    const { items } = this.state;
+
+    this.setState({
+      items: items.filter((item, i) => {
+        return i !== index;
+      })
+    });
+  };
+
   handleChange = event => {
     //console.log(this.state.items);
     //const itemDate = Date.now();
