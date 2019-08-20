@@ -1,7 +1,7 @@
 import React from 'react';
 
 const List = props => (
-    <ul>
+    <ul className="todolist">
         {
             props.items.map((newItem, index) => <li key={index}>{newItem}</li>)
         }
