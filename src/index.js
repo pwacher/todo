@@ -7,7 +7,7 @@ import Header from "./components/Header";
 class App extends React.Component {
   render() {
     return (
-      <div className="centerpage">
+      <div>
         <Header myTitle="UberCoolToDos"/>
         <NewTodo />
       </div>

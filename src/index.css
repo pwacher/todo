@@ -12,12 +12,27 @@ code {
 
 h1 {
   font-size: 50px;
+  text-align: center;
 }
 
-.todolist {
-  color: black;
+hr {
+  margin: 20px 0px;
 }
-
 .centerpage {
   text-align: center;
+  width: 600px;
+}
+
+.formArea {
+  text-align: left;
+}
+
+ul {
+  width: 70%;
+  margin: auto;
+}
+
+li {
+  list-style-position: inside;
+  text-align: left;
 }

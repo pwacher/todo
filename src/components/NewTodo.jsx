@@ -9,12 +9,13 @@ class NewTodo extends React.Component {
 
   removeItem = index => {
     const { items } = this.state;
-
-    this.setState({
-      items: items.filter((item, i) => {
-        return i !== index;
-      })
-    });
+    console.log(items);
+    console.log(index);
+    // this.setState({
+    //   items: items.filter((item, i) => {
+    //     return i !== index;
+    //   })
+    //});
   };
 
   handleChange = event => {
@@ -39,7 +40,7 @@ class NewTodo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="formArea">
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -48,8 +49,9 @@ class NewTodo extends React.Component {
           />
           <input type="submit" value="Submit" />
         </form>
+        <hr />
 
-        <List items={this.state.items} />
+        <List items={this.state.items} removeItem={this.removeItem} />
       </div>
     );
   }
