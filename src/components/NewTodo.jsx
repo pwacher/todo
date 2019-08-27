@@ -9,18 +9,17 @@ class NewTodo extends React.Component {
 
   removeItem = index => {
     const { items } = this.state;
-    console.log(items);
-    console.log(index);
-    // this.setState({
-    //   items: items.filter((item, i) => {
-    //     return i !== index;
-    //   })
-    //});
+    this.setState({
+      // Uses the filter method on the items array, iterates thru the array, 
+      // compares the index of the current array item against the index(id) if the item clicked.
+      // Only items that return true are returned and the state is updated.
+      items: items.filter((item, i) => {
+        return i !== index;
+      })
+    });
   };
 
   handleChange = event => {
-    //console.log(this.state.items);
-    //const itemDate = Date.now();
     const { value } = event.target;
     this.setState({ newItem: value });
   };
@@ -30,6 +29,7 @@ class NewTodo extends React.Component {
 
     this.setState({
       newItem: "",
+      // uses the rest parameter (...) to add newItem to the existing items list
       items: [...this.state.items, this.state.newItem]
     });
 
